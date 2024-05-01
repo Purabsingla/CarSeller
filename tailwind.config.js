@@ -12,6 +12,9 @@ module.exports = {
 module.exports = withMT({
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    fontFamily: {
+      Merriweather: ["Merriweather", "sans-serif"],
+    },
     extend: {},
   },
   plugins: [],

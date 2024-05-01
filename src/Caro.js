@@ -6,6 +6,7 @@ import {
   Typography,
   Button,
   IconButton,
+  Collapse
 } from "@material-tailwind/react";
 
 export function NavbarDefault() {
@@ -17,14 +18,15 @@ export function NavbarDefault() {
       () => window.innerWidth >= 960 && setOpenNav(false),
     );
   }, []);
-
+  const navigate = useNavigate();
   const navList = (
-    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 ">
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="flex items-center gap-x-2 p-1 font-medium"
+        className="flex items-center gap-x-2 p-1 font-medium cursor-pointer"
+        onClick={()=>navigate('/')}
       >
 
         <svg width="18" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,9 +34,9 @@ export function NavbarDefault() {
           <path d="M9 17.25C8.58579 17.25 8.25 17.5858 8.25 18C8.25 18.4142 8.58579 18.75 9 18.75H15C15.4142 18.75 15.75 18.4142 15.75 18C15.75 17.5858 15.4142 17.25 15 17.25H9Z" fill="#1C274C" />
         </svg>
 
-        <a href="#" className="flex items-center">
+        <p className="flex items-center font-extrabold">
           Home
-        </a>
+        </p>
       </Typography>
       <Typography
         as="li"
@@ -47,7 +49,7 @@ export function NavbarDefault() {
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>about</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="about-white" fill="#a1a1a1" transform="translate(42.666667, 42.666667)"> <path d="M213.333333,3.55271368e-14 C95.51296,3.55271368e-14 3.55271368e-14,95.51168 3.55271368e-14,213.333333 C3.55271368e-14,331.153707 95.51296,426.666667 213.333333,426.666667 C331.154987,426.666667 426.666667,331.153707 426.666667,213.333333 C426.666667,95.51168 331.154987,3.55271368e-14 213.333333,3.55271368e-14 Z M213.333333,384 C119.227947,384 42.6666667,307.43872 42.6666667,213.333333 C42.6666667,119.227947 119.227947,42.6666667 213.333333,42.6666667 C307.44,42.6666667 384,119.227947 384,213.333333 C384,307.43872 307.44,384 213.333333,384 Z M240.04672,128 C240.04672,143.46752 228.785067,154.666667 213.55008,154.666667 C197.698773,154.666667 186.713387,143.46752 186.713387,127.704107 C186.713387,112.5536 197.99616,101.333333 213.55008,101.333333 C228.785067,101.333333 240.04672,112.5536 240.04672,128 Z M192.04672,192 L234.713387,192 L234.713387,320 L192.04672,320 L192.04672,192 Z" id="Shape"> </path> </g> </g> </g>
 
         </svg>
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex items-center font-extrabold">
           About
         </a>
       </Typography>
@@ -70,7 +72,7 @@ export function NavbarDefault() {
             <path fill-rule="evenodd" clip-rule="evenodd" d="M17.5 7.38462C16.7389 7.38462 15.6624 7.20353 14.9832 7.07057C14.9074 7.05575 14.8624 7.00592 14.8477 6.95312C14.7176 6.4842 14.5882 5.90057 14.5882 5.5C14.5882 5.09943 14.7176 4.5158 14.8477 4.04688C14.8624 3.99408 14.9074 3.94425 14.9832 3.92943C15.6624 3.79647 16.7389 3.61538 17.5 3.61538C18.2611 3.61538 19.3376 3.79647 20.0168 3.92943C20.0926 3.94425 20.1376 3.99408 20.1523 4.04688C20.2824 4.5158 20.4118 5.09943 20.4118 5.5C20.4118 5.90057 20.2824 6.4842 20.1523 6.95312C20.1376 7.00592 20.0926 7.05575 20.0168 7.07057C19.3376 7.20353 18.2611 7.38462 17.5 7.38462ZM14.683 8.65685C15.3619 8.78973 16.5717 9 17.5 9C18.4283 9 19.6381 8.78973 20.317 8.65685C20.9596 8.53107 21.4966 8.05534 21.6807 7.39214C21.8134 6.91427 22 6.14299 22 5.5C22 4.85701 21.8134 4.08573 21.6807 3.60786C21.4966 2.94466 20.9596 2.46893 20.317 2.34315C19.6381 2.21027 18.4283 2 17.5 2C16.5717 2 15.3619 2.21027 14.683 2.34315C14.0404 2.46893 13.5034 2.94466 13.3193 3.60786C13.1866 4.08573 13 4.85701 13 5.5C13 6.14299 13.1866 6.91427 13.3193 7.39214C13.5034 8.05534 14.0404 8.53107 14.683 8.65685Z" fill="#a1a1a1"></path>
           </g>
         </svg>
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex items-center font-extrabold">
           Category
         </a>
       </Typography>
@@ -92,35 +94,35 @@ export function NavbarDefault() {
           <rect x="15" y="8" width="3" height="3"></rect>
           </g></g>
         </svg>
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex items-center font-extrabold">
           Contact us
         </a>
       </Typography>
     </ul>
   );
-  const navigate = useNavigate();
   return (
-    <Navbar className="mx-auto px-4 py-2 lg:px-8 lg:py-4 w-max-screen shadow-none">
-      <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
+    <Navbar className=" sticky top-0 z-10 mx-auto max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-blue-500">
+      <div className="flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
           href="#"
-          className="mr-4 cursor-pointer py-1.5 font-medium"
+          className="mr-4 cursor-pointer py-1.5 font-semibold"
         >
 
           Car Canvas
         </Typography>
         <div className="hidden lg:block">{navList}</div>
         <div className="flex items-center gap-x-1">
-          <Button variant="text" size="sm" className="hidden lg:inline-block" onClick={()=>navigate('Login')}>
+          <Button variant="text" size="sm" className="hidden lg:inline-block" onClick={()=>navigate('/login')}>
             <span>Log In</span>
           </Button>
           <Button
             variant="gradient"
             size="sm"
             className="hidden lg:inline-block"
+            onClick={()=>{navigate('/signup')}}
           >
-            <span>Sign in</span>
+            <span>Sign up</span>
           </Button>
         </div>
         <IconButton
@@ -161,19 +163,20 @@ export function NavbarDefault() {
           )}
         </IconButton>
       </div>
-      <MobileNav open={openNav}>
+      {/* container mx-auto shadow-none w-max-screen*/}
+      <Collapse open={openNav}>
         <div className="container mx-auto">
           {navList}
           <div className="flex items-center gap-x-1">
-            <Button fullWidth variant="text" size="sm" className="">
+            <Button fullWidth variant="text" size="sm" className="" onClick={()=>navigate('/login')}>
               <span>Log In</span>
             </Button>
-            <Button fullWidth variant="gradient" size="sm" className="">
+            <Button fullWidth variant="gradient" size="sm" className="" onClick={()=>{navigate('/signup')}}>
               <span>Sign in</span>
             </Button>
           </div>
         </div>
-      </MobileNav>
+      </Collapse>
     </Navbar>
   );
 }

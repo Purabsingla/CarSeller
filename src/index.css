@@ -2,5 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 .custompos{
-    left:37%;
+    left:32%;
 }
+.leftt{
+    left: 46.5%;
+    top:60%;
+}
+.header{
+    left: 35%;
+}
+@font-face {
+    font-family: "Merriweather";
+    src: url("https://fonts.google.com/share?selection.family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900");
+  }
