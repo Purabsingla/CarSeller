@@ -1,116 +1,36 @@
-import { Carousel, Typography, Button } from "@material-tailwind/react";
-
+import car from './assests/4kimage.jpg'
+import { motion } from 'framer-motion'
+import { Button } from "@material-tailwind/react";
 export function CaroContent() {
     return (
-        <Carousel className="rounded-xl">
-            <div className="relative h-screen w-full">
-                <img
-                    src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-                    alt="image 1"
-                    className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 grid h-full w-full place-items-center backdrop-blur-sm">
-                    <div className="w-3/4 text-center md:w-2/4 bg-black/75 p-10 rounded-xl">
-                        <Typography
-                            variant="h1"
-                            color="white"
-                            className="mb-4 text-3xl md:text-4xl lg:text-5xl"
-                        >
-                            The Beauty of Nature
-                        </Typography>
-                        <Typography
-                            variant="lead"
-                            color="white"
-                            className="mb-12 opacity-80"
-                        >
-                            It is not so much for its beauty that the forest makes a claim
-                            upon men&apos;s hearts, as for that subtle something, that quality
-                            of air that emanation from old trees, that so wonderfully changes
-                            and renews a weary spirit.
-                        </Typography>
-                        <div className="flex justify-center gap-2">
-                            <Button size="lg" color="white">
-                                Explore
-                            </Button>
-                            <Button size="lg" color="white" variant="text">
-                                Gallery
-                            </Button>
-                        </div>
-                    </div>
-                </div>
+        <>
+            <div className='realtive overflow-auto'>
+                <img src={car} className='w-screen'></img>
+                <motion.div
+                    initial={{ opacity : 0, y: 75 }}
+                    animate={{ opacity : 1, y: 0 }}
+                    transiton={{ duration: 2 ,type: "spring",
+                    stiffness: 150}}
+                    className='header font-Merriweather absolute top-52 text-white text-8xl font-semibold'>
+                    <h1>A Place To</h1>
+                </motion.div>
+                <motion.div
+                    initial={{ opacity : 0, y: 75 }}
+                    animate={{ opacity : 1, y: 0 }}
+                    transiton={{ duration: 1 }}
+                    className='font-Merriweather absolute left-80 top-72 text-white text-8xl font-semibold'>
+                    <h1>Get Your Dream Car</h1>
+                </motion.div>
+                <motion.div
+                    initial={{ opacity : 0, y: 75 }}
+                    animate={{ opacity : 1, y: 0 }}
+                    transiton = {{ delay : 1.5, duration : 1.5 , type : "spring" }}
+                    className='absolute leftt'
+                    >
+                    <Button variant="outlined" color='blue' className='font-semibold border-2'>View More</Button>
+                </motion.div>
             </div>
-            <div className="relative h-screen w-full">
-                <img
-                    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-                    alt="image 2"
-                    className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 grid h-full w-full items-center bg-black/75">
-                    <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
-                        <Typography
-                            variant="h1"
-                            color="white"
-                            className="mb-4 text-3xl md:text-4xl lg:text-5xl"
-                        >
-                            The Beauty of Nature
-                        </Typography>
-                        <Typography
-                            variant="lead"
-                            color="white"
-                            className="mb-12 opacity-80"
-                        >
-                            It is not so much for its beauty that the forest makes a claim
-                            upon men&apos;s hearts, as for that subtle something, that quality
-                            of air that emanation from old trees, that so wonderfully changes
-                            and renews a weary spirit.
-                        </Typography>
-                        <div className="flex gap-2">
-                            <Button size="lg" color="white">
-                                Explore
-                            </Button>
-                            <Button size="lg" color="white" variant="text">
-                                Gallery
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="relative h-screen w-full">
-                <img
-                    src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-                    alt="image 3"
-                    className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 grid h-full w-full items-end bg-black/75">
-                    <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
-                        <Typography
-                            variant="h1"
-                            color="white"
-                            className="mb-4 text-3xl md:text-4xl lg:text-5xl"
-                        >
-                            The Beauty of Nature
-                        </Typography>
-                        <Typography
-                            variant="lead"
-                            color="white"
-                            className="mb-12 opacity-80"
-                        >
-                            It is not so much for its beauty that the forest makes a claim
-                            upon men&apos;s hearts, as for that subtle something, that quality
-                            of air that emanation from old trees, that so wonderfully changes
-                            and renews a weary spirit.
-                        </Typography>
-                        <div className="flex gap-2">
-                            <Button size="lg" color="white">
-                                Explore
-                            </Button>
-                            <Button size="lg" color="white" variant="text">
-                                Gallery
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </Carousel>
-    );
+        </>
+
+    )
 }
