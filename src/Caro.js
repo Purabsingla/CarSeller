@@ -26,7 +26,7 @@ export function NavbarDefault() {
         variant="small"
         color="blue-gray"
         className="flex items-center gap-x-2 p-1 font-medium cursor-pointer"
-        onClick={()=>navigate('/')}
+        onClick={() => navigate('/')}
       >
 
         <svg width="18" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,9 +90,9 @@ export function NavbarDefault() {
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
           <g id="SVGRepo_iconCarrier"> <g id="contact-us"><path d="M4,24v-5H0V0h23v19h-9.3L4,24z M2,17h4v3.7l7.3-3.7H21V2H2V17z"></path>
-          <rect x="5" y="8" width="3" height="3"></rect> </g> <g> <rect x="10" y="8" width="3" height="3"></rect>
-          <rect x="15" y="8" width="3" height="3"></rect>
-          </g></g>
+            <rect x="5" y="8" width="3" height="3"></rect> </g> <g> <rect x="10" y="8" width="3" height="3"></rect>
+              <rect x="15" y="8" width="3" height="3"></rect>
+            </g></g>
         </svg>
         <a href="#" className="flex items-center font-extrabold">
           Contact us
@@ -101,7 +101,7 @@ export function NavbarDefault() {
     </ul>
   );
   return (
-    <Navbar className=" sticky top-0 z-10 mx-auto max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-blue-500">
+    <Navbar className=" sticky top-0 z-10 mx-auto max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-white">
       <div className="flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
@@ -113,14 +113,14 @@ export function NavbarDefault() {
         </Typography>
         <div className="hidden lg:block">{navList}</div>
         <div className="flex items-center gap-x-1">
-          <Button variant="text" size="sm" className="hidden lg:inline-block" onClick={()=>navigate('/login')}>
+          <Button variant="text" size="sm" className="hidden lg:inline-block" onClick={() => navigate('/login')}>
             <span>Log In</span>
           </Button>
           <Button
             variant="gradient"
             size="sm"
             className="hidden lg:inline-block"
-            onClick={()=>{navigate('/signup')}}
+            onClick={() => { navigate('/signup') }}
           >
             <span>Sign up</span>
           </Button>
@@ -168,10 +168,10 @@ export function NavbarDefault() {
         <div className="container mx-auto">
           {navList}
           <div className="flex items-center gap-x-1">
-            <Button fullWidth variant="text" size="sm" className="" onClick={()=>navigate('/login')}>
+            <Button fullWidth variant="text" size="sm" className="" onClick={() => navigate('/login')}>
               <span>Log In</span>
             </Button>
-            <Button fullWidth variant="gradient" size="sm" className="" onClick={()=>{navigate('/signup')}}>
+            <Button fullWidth variant="gradient" size="sm" className="" onClick={() => { navigate('/signup') }}>
               <span>Sign in</span>
             </Button>
           </div>
