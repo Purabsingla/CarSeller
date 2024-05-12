@@ -1,16 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 const withMT = require("@material-tailwind/react/utils/withMT");
+const colors = require("material-ui-colors");
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {
-
-    },
+    extend: {},
   },
   plugins: [],
-}
+};
 module.exports = withMT({
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
@@ -20,7 +17,8 @@ module.exports = withMT({
     extend: {
       animation: {
         ["infinite-slider"]: "infiniteSlider 20s linear infinite",
-      }, keyframes: {
+      },
+      keyframes: {
         infiniteSlider: {
           "0%": { transform: "translateX(0)" },
           "100%": {
@@ -28,9 +26,10 @@ module.exports = withMT({
           },
         },
       },
+      colors: { ...colors },
     },
     colors: {
-      'some': '#ebebeb'
+      some: "#ebebeb",
     },
   },
   plugins: [],

@@ -1,187 +1,107 @@
 import { Breadcrumbs } from "@material-tailwind/react";
 import { IoIosArrowForward } from "react-icons/io";
-function Login_1() {
+import Checkbox from "@mui/material/Checkbox";
+import Button from "@mui/material/Button";
+import { NavbarDefault } from "../Caro";
+import TextField from "@mui/material/TextField";
+import { styled } from "@mui/material/styles";
+import { purple } from "@mui/material/colors";
+
+export default function Log() {
+  const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(purple[300]),
+    backgroundColor: purple[300],
+    "&:hover": {
+      backgroundColor: purple[500],
+    },
+  }));
+  const label = { inputProps: { "aria-label": "Checkbox demo" } };
   return (
-    <div class="container">
-      {/* <!-- Breadcumb area start --> */}
-      <Breadcrumbs
-        separator={
-          <IoIosArrowForward className="h-4 w-4 text-black" strokeWidth={2.5} />
-        }
-        className="w-[99vw] bg-some p-6"
-      >
-        <a href="#" className="opacity-60">
-          Docs
-        </a>
-        <a href="#" className="opacity-60">
-          Components
-        </a>
-        <a href="#">Breadcrumbs</a>
-      </Breadcrumbs>
-      {/* <!--End Breadcumb area --> */}
-
-      {/* <style type="text/css">
-          .breadcrumbs {
-            background-color: #ebebeb;
+    <>
+      <NavbarDefault />
+      <div class="container">
+        <Breadcrumbs
+          separator={
+            <IoIosArrowForward
+              className="h-4 w-4 text-black"
+              strokeWidth={2.5}
+            />
           }
-        </style> 
-        
-          style="display: none"
-        */}
-      <div id="content" className="grid grid-cols-2 grid-rows-2">
-        <div className="col-span-4 w-[99vw] p-5 text-2xl font-bold pl-20 bg-red-800">
-          <h1>Account</h1>
-        </div>
-        <div className="bg-blue-300">
-          <div class="well">
-            <h2>New Customer</h2>
-            <p>
-              <strong>Register Account</strong>
-            </p>
-            <p>
-              By creating an account you will be able to shop faster, be up to
-              date on an order&#39;s status, and keep track of the orders you
-              have previously made.
-            </p>
-            <br />
-            <a href="register.html" id="button-account" class="btn btn-primary">
-              Continue
-            </a>
-          </div>
-        </div>
+          className="w-[99vw] bg-some p-6 bg-gradient-to-r from-purple-A700 to-purple-300 rounded-none"
+        >
+          <a
+            href="#"
+            className="text-black transition-all duration-300 hover:text-blue-200"
+          >
+            home
+          </a>
+          <a
+            href="#"
+            className="text-black transition-all duration-300 hover:text-blue-200"
+          >
+            Sign In
+          </a>
+        </Breadcrumbs>
         <div>
-          <div class="well">
-            <h2>Returning Customer</h2>
-            <p>
-              <strong>I am a returning customer</strong>
-            </p>
-            <form
-              method="post"
-              action="https://t90-theme.myshopify.com/account/login"
-              id="customer_login"
-              accept-charset="UTF-8"
-              data-login-with-shop-sign-in="true"
-            >
-              <input type="hidden" name="form_type" value="customer_login" />
-              <input type="hidden" name="utf8" value="✓" />
-              <input
-                type="hidden"
-                name="checkout_url"
-                value="/collections/all"
-              />
-
-              <div
-                class="note form-success"
-                id="resetSuccess"
-                // something  like style="display: none"
-              >
-                We&#39;ve sent you an email with a link to update your password.
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="customer_email">
-                  Email
-                </label>
-                <input
-                  type="text"
-                  value=""
-                  name="customer[email]"
-                  id="customer_email"
-                  placeholder="Email"
-                  class="form-control"
-                  autocorrect="off"
-                  autocapitalize="off"
-                  autofocus
-                />
-              </div>
-
-              <div class="form-group">
-                <label class="control-label" for="customer_password">
-                  Password
-                </label>
-                <input
-                  class="form-control"
-                  type="password"
-                  value=""
-                  name="customer[password]"
-                  id="customer_password"
-                  placeholder="Password"
-                  className="form-control"
-                />
-                <a
-                  rel="nofollow"
-                  href="#some"
-                  onclick="showRecoverPasswordForm();return false;"
-                >
-                  Forgot your password?
-                </a>
-              </div>
-
-              <p class="submit">
-                <input type="submit" value="Sign In" class="btn btn-primary" />
-                or
-                <a class="btn-acct" href="../index.html">
-                  Return to Store
-                </a>
-              </p>
-            </form>
-
-            <div
-              id="recover_password"
-              //  style="display: none"
-            >
-              <h3>Reset your password</h3>
-              <p>We will send you an email to reset your password.</p>
-
-              <form
-                method="post"
-                action="https://t90-theme.myshopify.com/account/recover"
-                accept-charset="UTF-8"
-              >
-                <input
-                  type="hidden"
-                  name="form_type"
-                  value="recover_customer_password"
-                />
-                <input type="hidden" name="utf8" value="✓" />
-
-                <div class="form-group">
-                  <label for="recover-email">Email</label>
-                  <input
-                    type="text"
-                    value=""
-                    name="email"
-                    class="form-control"
-                    id="recover-email"
-                    placeholder="Email"
-                    autocorrect="off"
-                    autocapitalize="off"
-                  />
-
-                  <p class="submit lost-password form-group">
-                    <button
-                      class="btn btn-primary"
-                      name="SubmitLogin"
-                      id="button-account"
-                      type="submit"
-                    >
-                      <span>Submit</span>
-                    </button>
-                    or
-                    <a
-                      class="btn-acct"
-                      href="#"
-                      onclick="hideRecoverPasswordForm();return false;"
-                    >
-                      Cancel
-                    </a>
+          <div className="min-h-[91vh] w-[99vw] p-10 bg-gradient-to-r from-purple-A700 to-purple-300">
+            <div className="container mx-auto">
+              <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
+                <div className="w-full lg:w-1/2 py-16 px-12">
+                  <h2 className="text-3xl mb-4">Login</h2>
+                  <p className="mb-4">
+                    Secure gateway . Enter credentials for website access and
+                    interaction.
                   </p>
+                  <form action="#">
+                    <div class="mt-5">
+                      <TextField
+                        id="standard-basic"
+                        label="E mail"
+                        variant="standard"
+                        color="secondary"
+                        className="py-1 px-2 w-full"
+                      />
+                    </div>
+                    <div class="mt-5">
+                      <TextField
+                        id="standard-basic"
+                        label="Password"
+                        variant="standard"
+                        color="secondary"
+                        type="password"
+                        className="py-1 px-2 w-full"
+                      />
+                    </div>
+
+                    <div class="mt-5">
+                      <Checkbox {...label} color="secondary" />
+                      <span className="text-sm">Remember Me</span>
+                    </div>
+                    <div className="mt-5">
+                      <span className="text-sm">
+                        Don't have An Account ,{" "}
+                        <span className="text-purple-300 font-semibold cursor-pointer">
+                          Sign up
+                        </span>
+                      </span>
+                    </div>
+                    <div class="mt-5">
+                      <ColorButton
+                        // color="secondary"
+                        variant="contained"
+                        className="w-full"
+                      >
+                        Sign In
+                      </ColorButton>
+                    </div>
+                  </form>
                 </div>
-              </form>
+                <div className="image-add-sec w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
-export default Login_1;

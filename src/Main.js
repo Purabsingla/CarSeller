@@ -1,21 +1,31 @@
-import { NavbarDefault } from './Caro';
-import { CaroContent } from './Caroues';
-import New from './Products/NewProducts';
-import InfiniteSlider from './Products/InfiniteCarousel';
-import { BackgroundBlogCard } from './Footer/Blog';
-import { FooterWithSocialLinks } from './Footer/Footer'
-import Login_1 from './Login_Signup/Login_1';
+import { NavbarDefault } from "./Caro";
+import { CaroContent } from "./Caroues";
+import New from "./Products/NewProducts";
+import InfiniteSlider from "./Products/InfiniteCarousel";
+import { BackgroundBlogCard } from "./Footer/Blog";
+import { FooterWithSocialLinks } from "./Footer/Footer";
+import { motion } from "framer-motion";
+
 const Main = () => {
-    return (
-        <>
-            <NavbarDefault />
-            <CaroContent />
-            <New />
-            <InfiniteSlider />
-            <BackgroundBlogCard />
-            <FooterWithSocialLinks />
-            <Login_1 />
-        </>
-    )
-}
+  {
+    /*initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, transition: { duration: 1 } }}
+        exit={{opacity:0}} */
+  }
+  return (
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, transition: { duration: 1 } }}
+      >
+        <NavbarDefault />
+        <CaroContent />
+      </motion.div>
+      <New />
+      <InfiniteSlider />
+      <BackgroundBlogCard />
+      <FooterWithSocialLinks />
+    </>
+  );
+};
 export default Main;
