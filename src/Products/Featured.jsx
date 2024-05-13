@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Car1 from "../assests/tata-nexon-ev-exterior-side-view.png";
-function New() {
+function Feature() {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -53,7 +53,7 @@ function New() {
         viewport={{ once: false }}
         className="font-Merriweather flex items-center justify-center text-6xl font-semibold py-9 "
       >
-        <h1>New Products</h1>
+        <h1>Feature Products</h1>
       </motion.div>
       <motion.div
         initial={{
@@ -331,4 +331,4 @@ function New() {
     </>
   );
 }
-export default New;
+export default Feature;

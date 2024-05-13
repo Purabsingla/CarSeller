@@ -5,6 +5,7 @@ import InfiniteSlider from "./Products/InfiniteCarousel";
 import { BackgroundBlogCard } from "./Footer/Blog";
 import { FooterWithSocialLinks } from "./Footer/Footer";
 import { motion } from "framer-motion";
+import Feature from "./Products/Featured";
 
 const Main = () => {
   {
@@ -22,6 +23,7 @@ const Main = () => {
         <CaroContent />
       </motion.div>
       <New />
+      <Feature />
       <InfiniteSlider />
       <BackgroundBlogCard />
       <FooterWithSocialLinks />
