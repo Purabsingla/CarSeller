@@ -8,7 +8,9 @@ import {
   IconButton,
   Collapse,
 } from "@material-tailwind/react";
-import { motion } from "framer-motion";
+import { RiSearch2Line } from "react-icons/ri";
+// import IconButton from "@mui/material/IconButton";
+import { HiOutlineShoppingCart } from "react-icons/hi2";
 
 export function NavbarDefault() {
   const [openNav, setOpenNav] = useState(false);
@@ -191,6 +193,17 @@ export function NavbarDefault() {
           Contact us
         </a>
       </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="flex items-center gap-x-2 p-1 font-medium cursor-pointer"
+        onClick={() => navigate("/")}
+      >
+        <RiSearch2Line />
+
+        <p className="flex items-center font-extrabold">Search</p>
+      </Typography>
     </ul>
   );
   return (
@@ -223,6 +236,13 @@ export function NavbarDefault() {
           >
             <span>Sign up</span>
           </Button>
+          <Button
+            className="rounded-full hidden lg:inline-block"
+            variant="text"
+            size="md"
+          >
+            <HiOutlineShoppingCart />
+          </Button>
         </div>
         <IconButton
           variant="text"
@@ -253,7 +273,7 @@ export function NavbarDefault() {
         </IconButton>
       </div>
       {/* container mx-auto shadow-none w-max-screen*/}
-      <Collapse open={openNav}>
+      <MobileNav open={openNav}>
         <div className="container mx-auto">
           {navList}
           <div className="flex items-center gap-x-1">
@@ -277,9 +297,12 @@ export function NavbarDefault() {
             >
               <span>Sign in</span>
             </Button>
+            <Button className="rounded-full" variant="text" size="md">
+              <HiOutlineShoppingCart />
+            </Button>
           </div>
         </div>
-      </Collapse>
+      </MobileNav>
     </Navbar>
   );
 }

@@ -4,8 +4,9 @@ import New from "./Products/NewProducts";
 import InfiniteSlider from "./Products/InfiniteCarousel";
 import { BackgroundBlogCard } from "./Footer/Blog";
 import { FooterWithSocialLinks } from "./Footer/Footer";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import Feature from "./Products/Featured";
+// import CustomNavbarHaiMera from "./Navigation";
 
 const Main = () => {
   {
@@ -15,18 +16,19 @@ const Main = () => {
   }
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1, transition: { duration: 1 } }}
-      >
-        <NavbarDefault />
+      <div>
         <CaroContent />
-      </motion.div>
-      <New />
-      <Feature />
-      <InfiniteSlider />
-      <BackgroundBlogCard />
-      <FooterWithSocialLinks />
+        <New />
+        <Feature />
+        <InfiniteSlider />
+        <BackgroundBlogCard />
+        <FooterWithSocialLinks />
+        <div>
+          <div className="absolute top-[0] w-[99vw]">
+            <NavbarDefault />
+          </div>
+        </div>
+      </div>
     </>
   );
 };
